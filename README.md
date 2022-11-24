@@ -1,18 +1,19 @@
 # pigeon_example
 
-A new Flutter plugin project.
+Minimal project that shows pigeon's bug: https://github.com/flutter/flutter/issues/115906
 
-## Getting Started
+Input: [messages.dart](pigeons/messages.dart)
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+Output: [messages.swift](ios/Classes/messages.swift)
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-The plugin project was generated without specifying the `--platforms` flag, no platforms are currently supported.
-To add platforms, run `flutter create -t plugin --platforms <platforms> .` in this directory.
-You can also find a detailed instruction on how to add platforms in the `pubspec.yaml` at https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms.
+```
+% ./run_pigeon.sh
+Running "flutter pub get" in pigeon_example...                   1,631ms
+Running "flutter pub get" in example...                            227ms
+Launching lib/main.dart on iPhone 14 in debug mode...
+Running Xcode build...                                                  
+ └─Compiling, linking and signing...                      1,506ms
+Xcode build done.                                            8.5s
+Error connecting to the service protocol: failed to connect to http://127.0.0.1:65040/SBSkaMgAg_U=/
+Could not cast value of type 'FlutterStandardTypedData' (0x1b7cc89b8) to 'NSArray' (0x1b7cc8490).
+```
